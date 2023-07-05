@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Home from "./Home";
-import CompanyList from "./CompanyList";
-import JobList from "./JobList";
-import CompanyDetail from "./CompanyDetail";
+import CompanyList from "./Company/CompanyList";
+import JobList from "./Job/JobList";
+import CompanyDetail from "./Company/CompanyDetail";
 import LogInForm from "./LogInForm";
 import SignUpForm from "./SignUpForm";
 import ProfileForm from "./ProfileForm";

@@ -6,8 +6,6 @@ import Navbar from "react-bootstrap/Navbar";
 import userContext from "./userContext";
 import { Button } from "react-bootstrap";
 
-import "./Navbar.css";
-
 /** NavBar component.
  *
  * App -> NavBar
@@ -29,7 +27,11 @@ function NavBar({ handleLogout }) {
               <Nav.Link href="/companies">Companies </Nav.Link>
               <Nav.Link href="/jobs">Jobs</Nav.Link>
               <Nav.Link href="/profile">Profile </Nav.Link>
-              <Button variant="outline-primary" href="/logout" onClick={handleLogout}>
+              <Button
+                variant="outline-primary"
+                href="/logout"
+                onClick={handleLogout}
+              >
                 Logout {user.username}
               </Button>
             </Nav>

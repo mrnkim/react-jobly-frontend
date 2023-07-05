@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import userContext from "./userContext";
 import Notice from "./Notice";
 import { Alert, Button } from "react-bootstrap";
-import Card from 'react-bootstrap/Card';
+import Card from "react-bootstrap/Card";
 
 /** ProfileForm component.
  *
@@ -60,7 +60,7 @@ function ProfileForm({ handleUpdate }) {
   return (
     //add success message for user
     <div className="background">
-      <Card style={{ width: '400px', padding: '20px', textAlign:"left" }}>
+      <Card style={{ width: "400px", padding: "20px", textAlign: "left" }}>
         <h2>Profile</h2>
         <form className="LogInForm" onSubmit={handleSubmit}>
           {error &&
@@ -117,7 +117,7 @@ function ProfileForm({ handleUpdate }) {
             />
           </div>
           <Alert show={showSuccessAlert} variant="success">
-            This is a success Message
+            Your changes have been saved
           </Alert>
           <Button variant="primary" type="submit">
             Save Changes

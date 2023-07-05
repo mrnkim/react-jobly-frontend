@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import JoblyApi from "./api";
-import SearchForm from "./SearchForm";
+import JoblyApi from "../api";
+import SearchForm from "../SearchForm";
 import CompanyCard from "./CompanyCard";
 
 /** CompanyList component.
@@ -31,9 +31,11 @@ function CompanyList() {
     <div>
       <SearchForm handleSearch={handleSearch} />
 
-      {(companies.length === 0) ? <h2>No companies found</h2> :
-          companies.map(c => <CompanyCard key={c.handle} company={c} />)
-      }
+      {companies.length === 0 ? (
+        <h2>No companies found</h2>
+      ) : (
+        companies.map((c) => <CompanyCard key={c.handle} company={c} />)
+      )}
     </div>
   );
 }

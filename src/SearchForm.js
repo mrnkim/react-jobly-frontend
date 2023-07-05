@@ -37,7 +37,7 @@ function SearchForm({ handleSearch }) {
           value={searchTerm}
           aria-label="searchTerm"
         />
-        <Button variant="primary" type="submit" className="m-1">
+        <Button variant="secondary" type="submit" className="m-1">
           Search
         </Button>
       </Form.Group>

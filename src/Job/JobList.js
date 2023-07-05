@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import JoblyApi from "./api";
-import SearchForm from "./SearchForm";
+import JoblyApi from "../api";
+import SearchForm from "../SearchForm";
 import JobCardListing from "./JobCardListing";
 
 /** JobList component.
@@ -16,7 +16,7 @@ function JobList() {
   const [jobs, setJobs] = useState(null);
 
   useEffect(function loadJobsFromAPI() {
-    handleSearch()
+    handleSearch();
   }, []);
 
   /** Search job with the search term and update the jobs list*/
@@ -30,9 +30,11 @@ function JobList() {
   return (
     <div>
       <SearchForm handleSearch={handleSearch} />
-      {(jobs.length === 0) ? <h2>No jobs found</h2> :
+      {jobs.length === 0 ? (
+        <h2>No jobs found</h2>
+      ) : (
         <JobCardListing jobs={jobs} />
-      }
+      )}
     </div>
   );
 }
