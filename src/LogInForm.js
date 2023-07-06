@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 import Notice from "./Notice";
 import Spinner from "react-bootstrap/Spinner";
+import Overlay from "react-bootstrap/Overlay";
 
 /** LogInForm component.
  *
@@ -25,8 +26,10 @@ function LogInForm({ handleLogIn }) {
   });
   const [error, setError] = useState(null);
   let [isLoading, setIsLoading] = useState(false);
+  const [show, setShow] = useState(false);
 
   const navigate = useNavigate();
+  const target = useRef(null);
 
   /** Update form input. */
   function handleChange(evt) {
@@ -69,9 +72,32 @@ function LogInForm({ handleLogIn }) {
           {error &&
             error.map((e, i) => <Notice key={i} message={e} type="danger" />)}
           {isLoading && (
-            <Spinner animation="border" role="status">
-              <span className="visually-hidden">Loading...</span>
-            </Spinner>
+            <Overlay target={target.current} show={show} placement="top">
+              {({
+                placement: _placement,
+                arrowProps: _arrowProps,
+                show: _show,
+                popper: _popper,
+                hasDoneInitialMeasure: _hasDoneInitialMeasure,
+                ...props
+              }) => (
+                <div
+                  {...props}
+                  style={{
+                    position: "absolute",
+                    backgroundColor: "rgba(255, 100, 100, 0.85)",
+                    padding: "2px 10px",
+                    color: "white",
+                    borderRadius: 3,
+                    ...props.style,
+                  }}
+                >
+                  <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                  </Spinner>{" "}
+                </div>
+              )}
+            </Overlay>
           )}
           <Form.Group className="mb-3">
             <label htmlFor="username">Username</label>
