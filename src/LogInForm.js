@@ -25,8 +25,7 @@ function LogInForm({ handleLogIn }) {
     password: "",
   });
   const [error, setError] = useState(null);
-  let [isLoading, setIsLoading] = useState(false);
-  const [show, setShow] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
   const target = useRef(null);
@@ -43,19 +42,20 @@ function LogInForm({ handleLogIn }) {
   /** Call parent function and clear form. */
   async function handleSubmit(evt, loginData = formData) {
     evt.preventDefault();
-    setIsLoading = true;
+    setIsLoading(true);
     try {
       await handleLogIn(loginData);
+      navigate("/");
     } catch (error) {
       setError(error);
+      setIsLoading(false);
       return;
     }
     setFormData({
       username: "",
       password: "",
     });
-    navigate("/");
-    setIsLoading = false;
+    setIsLoading(false);
   }
 
   async function logInTestUser(evt) {
@@ -72,7 +72,7 @@ function LogInForm({ handleLogIn }) {
           {error &&
             error.map((e, i) => <Notice key={i} message={e} type="danger" />)}
           {isLoading && (
-            <Overlay target={target.current} show={show} placement="top">
+            <Overlay target={target.current} show={isLoading} placement="top">
               {({
                 placement: _placement,
                 arrowProps: _arrowProps,
@@ -126,7 +126,7 @@ function LogInForm({ handleLogIn }) {
             />
           </Form.Group>
 
-          <Button variant="primary" type="submit">
+          <Button ref={target} variant="primary" type="submit">
             Log In
           </Button>
           <Button className="m-2" variant="success" onClick={logInTestUser}>
