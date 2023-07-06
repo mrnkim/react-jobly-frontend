@@ -6,6 +6,7 @@ import userContext from "./userContext";
 import RoutesList from "./RoutesList";
 import NavBar from "./NavBar";
 import JoblyApi from "./api";
+import Spinner from "react-bootstrap/Spinner";
 
 const LOCAL_STORAGE_TOKEN_KEY = "token";
 
@@ -84,8 +85,12 @@ function App() {
     setCurrUser({ user: null, isLoaded: true });
     setToken("");
   }
-  //TODO: Add loading component
-  if (!currUser.isLoaded) return <i>Loading...</i>;
+  if (!currUser.isLoaded)
+    return (
+      <Spinner animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    );
 
   return (
     <div className="App">
@@ -104,43 +109,3 @@ function App() {
 }
 
 export default App;
-
-
-/*TODO: styling
-- button x
-- search bar
-- alert messages x
-- put texts into div 
-- background
-- add styling for active navlink
-
-*/
-
-//Sudo code
-
-//make login form
-//get username and password
-
-//handleLogin function to call the static method from api.js
-
-//handleSignUp function to call another static method from api.js for registering a user
-
-//send username and password to backend (POST request to the backend)
-//create a function in api.js to make POST request
-//set token in api.js
-//returns token to app.js
-
-//receive token back from backend and set state for token in app.js
-
-//useEffect to see if token changed.
-//take the token and decode the payload to get username
-//find decoding frontend JWT library (JWT-decode)
-//take username and make a GET to backend for user information
-//route = /:username
-//token be dependency of useEffect
-//receive back: { username, firstName, lastName, isAdmin, jobs }
-
-//set state of current user to user information
-//set the context for the user information
-
-//use logic in our component to check the context to see if user is logged in

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import JoblyApi from "../api";
 import SearchForm from "../SearchForm";
 import CompanyCard from "./CompanyCard";
+import { Spinner } from "react-bootstrap";
 
 /** CompanyList component.
  *
@@ -25,7 +26,12 @@ function CompanyList() {
     setCompanies(companies);
   }
 
-  if (!companies) return <i>Loading...</i>;
+  if (!companies)
+    return (
+      <Spinner animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    );
 
   return (
     <div>

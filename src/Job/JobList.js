@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import JoblyApi from "../api";
 import SearchForm from "../SearchForm";
 import JobCardListing from "./JobCardListing";
+import { Spinner } from "react-bootstrap";
 
 /** JobList component.
  *
@@ -25,7 +26,12 @@ function JobList() {
     setJobs(jobs);
   }
 
-  if (!jobs) return <i>Loading...</i>;
+  if (!jobs)
+    return (
+      <Spinner animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    );
 
   return (
     <div>

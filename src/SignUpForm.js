@@ -134,6 +134,13 @@ function SignUpForm({ handleSignUp }) {
           <Button variant="primary" type="submit">
             Sign Up
           </Button>
+          <Button
+            className="m-2"
+            variant="danger"
+            onClick={() => navigate("/")}
+          >
+            Close
+          </Button>
         </Form>
       </Card>
     </div>

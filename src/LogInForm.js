@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 import Notice from "./Notice";
+import Spinner from "react-bootstrap/Spinner";
 
 /** LogInForm component.
  *
@@ -23,6 +24,8 @@ function LogInForm({ handleLogIn }) {
     password: "",
   });
   const [error, setError] = useState(null);
+  let [isLoading, setIsLoading] = useState(false);
+
   const navigate = useNavigate();
 
   /** Update form input. */
@@ -37,6 +40,7 @@ function LogInForm({ handleLogIn }) {
   /** Call parent function and clear form. */
   async function handleSubmit(evt, loginData = formData) {
     evt.preventDefault();
+    setIsLoading = true;
     try {
       await handleLogIn(loginData);
     } catch (error) {
@@ -48,6 +52,7 @@ function LogInForm({ handleLogIn }) {
       password: "",
     });
     navigate("/");
+    setIsLoading = false;
   }
 
   async function logInTestUser(evt) {
@@ -63,6 +68,11 @@ function LogInForm({ handleLogIn }) {
         <Form className="LogInForm" onSubmit={handleSubmit}>
           {error &&
             error.map((e, i) => <Notice key={i} message={e} type="danger" />)}
+          {isLoading && (
+            <Spinner animation="border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
+          )}
           <Form.Group className="mb-3">
             <label htmlFor="username">Username</label>
             <input

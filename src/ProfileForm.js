@@ -3,6 +3,7 @@ import userContext from "./userContext";
 import Notice from "./Notice";
 import { Alert, Button } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
+import { useNavigate } from "react-router-dom";
 
 /** ProfileForm component.
  *
@@ -18,8 +19,9 @@ import Card from "react-bootstrap/Card";
  */
 function ProfileForm({ handleUpdate }) {
   const user = useContext(userContext);
-
   const { username, firstName, lastName, email } = user.user;
+
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     username: username,
@@ -40,7 +42,6 @@ function ProfileForm({ handleUpdate }) {
     }));
   }
 
-  //TODO: Use/Add Alert component (make it customizable - type prop)
   /** Call parent function and show updated data */
   async function handleSubmit(evt) {
     evt.preventDefault();
@@ -124,6 +125,13 @@ function ProfileForm({ handleUpdate }) {
           )}
           <Button variant="primary" type="submit">
             Save
+          </Button>
+          <Button
+            className="m-2"
+            variant="danger"
+            onClick={() => navigate("/")}
+          >
+            Close
           </Button>
         </form>
       </Card>
