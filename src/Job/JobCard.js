@@ -1,7 +1,7 @@
 import React from "react";
 import convertAndFormat from "../convertAndFormat";
 import Card from "react-bootstrap/Card";
-import Row from "react-bootstrap/Row";
+import "../Card.css";
 
 /** JobCard component.
  *
@@ -17,28 +17,24 @@ function JobCard({ job }) {
   const { companyHandle, title, salary, equity } = job;
   const formattedSalary = convertAndFormat(salary);
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        margin: "10px",
-      }}
-    >
-      <Card style={{ width: "30rem" }} className="m-auto">
+    <div className="align">
+      <Card className="card">
         <Card.Body>
-          <Card.Header style={{ marginBottom: "2rem" }}>{title}</Card.Header>
-          <Card.Text style={{ marginTop: "0.1rem" }}>
-            🏢 Compny: {companyHandle}
-          </Card.Text>
-          {salary && <Card.Text>💲 Salary: ${formattedSalary}</Card.Text>}
-          <Card.Text style={{ marginTop: "0.1rem" }}>
-            📈 Equity:{" "}
-            {equity === "0" || equity === null ? (
-              <span>None</span>
-            ) : (
-              <span>{equity}</span>
-            )}
-          </Card.Text>
+          <Card.Header className="header">{title}</Card.Header>
+          <div className="align">
+            <Card.Text className="text">
+              <div>🏢 Company: {companyHandle}</div>
+              <div>{salary && `💲 Salary: ${formattedSalary}`}</div>
+              <div>
+                📈 Equity:{" "}
+                {equity === "0" || equity === null ? (
+                  <span>None</span>
+                ) : (
+                  <span>{equity}</span>
+                )}
+              </div>
+            </Card.Text>
+          </div>
         </Card.Body>
       </Card>
     </div>

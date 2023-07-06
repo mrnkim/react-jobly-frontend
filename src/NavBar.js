@@ -12,7 +12,6 @@ import { Button } from "react-bootstrap";
  *
  * Renders links to home, companies, and jobs
  */
-//TODO: see if we can make NavLink active
 function NavBar({ handleLogout }) {
   const { user } = useContext(userContext);
 
@@ -28,7 +27,8 @@ function NavBar({ handleLogout }) {
               <Nav.Link href="/jobs">Jobs</Nav.Link>
               <Nav.Link href="/profile">Profile </Nav.Link>
               <Button
-                variant="outline-primary"
+                variant="outline-secondary"
+                style={{ marginLeft: "5px" }}
                 href="/logout"
                 onClick={handleLogout}
               >
@@ -37,7 +37,7 @@ function NavBar({ handleLogout }) {
             </Nav>
           ) : (
             <Nav className="ms-auto">
-              <Nav.Link href="/login">login</Nav.Link>
+              <Nav.Link href="/login">Login</Nav.Link>
               <Nav.Link href="/signup">Sign Up</Nav.Link>
             </Nav>
           )}

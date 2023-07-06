@@ -65,7 +65,6 @@ function ProfileForm({ handleUpdate }) {
         <form className="LogInForm" onSubmit={handleSubmit}>
           {error &&
             error.map((e, i) => <Notice key={i} message={e} type="danger" />)}
-
           <div className="mb-3">
             <label htmlFor="username">Username:</label>
             <input
@@ -77,7 +76,6 @@ function ProfileForm({ handleUpdate }) {
               disabled
             />
           </div>
-
           <div className="mb-3">
             <label htmlFor="firstName">First name:</label>
             <input
@@ -90,7 +88,6 @@ function ProfileForm({ handleUpdate }) {
               aria-label="firstName"
             />
           </div>
-
           <div className="mb-3">
             <label htmlFor="lastName">Last name:</label>
             <input
@@ -103,7 +100,6 @@ function ProfileForm({ handleUpdate }) {
               aria-label="lastName"
             />
           </div>
-
           <div className="mb-3">
             <label htmlFor="email">Email:</label>
             <input
@@ -116,11 +112,18 @@ function ProfileForm({ handleUpdate }) {
               aria-label="email"
             />
           </div>
-          <Alert show={showSuccessAlert} variant="success">
-            Your changes have been saved
-          </Alert>
+
+          {showSuccessAlert && (
+            <Alert
+              onClose={() => setShowSuccessAlert(false)}
+              variant="success"
+              dismissible
+            >
+              Your changes have been saved
+            </Alert>
+          )}
           <Button variant="primary" type="submit">
-            Save Changes
+            Save
           </Button>
         </form>
       </Card>

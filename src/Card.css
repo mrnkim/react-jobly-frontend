@@ -1,0 +1,23 @@
+.align {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+  }
+
+  .card {
+    width: 25rem;
+    margin: 10rem;
+    margin: auto;
+  }
+
+  .header {
+    padding: rem;
+    background-color: transparent;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 1rem
+  }

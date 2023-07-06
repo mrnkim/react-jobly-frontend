@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, Container, Row, Col } from "react-bootstrap";
 
 /** SearchForm component.
  *
@@ -27,21 +27,30 @@ function SearchForm({ handleSearch }) {
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3">
-        <input
-          id="searchTerm"
-          name="searchTerm"
-          placeholder="Enter search term..."
-          onChange={handleChange}
-          value={searchTerm}
-          aria-label="searchTerm"
-        />
-        <Button variant="secondary" type="submit" className="m-1">
-          Search
-        </Button>
-      </Form.Group>
-    </Form>
+    <Container className="mt-5">
+      <Row style={{ dispaly: "flex", justifyContent: "center" }}>
+        <Col sm={4}>
+          <Form className="d-flex" onSubmit={handleSubmit}>
+            <Form.Control
+              type="search"
+              id="searchTerm"
+              name="searchTerm"
+              placeholder="Search"
+              onChange={handleChange}
+              value={searchTerm}
+              aria-label="Search"
+            />
+            <Button
+              style={{ marginLeft: "3px" }}
+              className="rounded"
+              variant="primary"
+            >
+              Search
+            </Button>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

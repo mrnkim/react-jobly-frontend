@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import { Button } from "react-bootstrap";
 import defaultLogo from "../office-building.png";
+import "../Card.css";
 
 /** CompanyCard component.
  *
@@ -17,25 +18,15 @@ function CompanyCard({ company }) {
   const { handle, name, description, logoUrl } = company;
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        margin: "10px",
-      }}
-    >
+    <div className="align">
       <Link
         to={`/companies/${handle}`}
         style={{ textDecoration: "none", color: "black" }}
       >
-        <Card style={{ width: "25rem", margin: "10rem" }} className="m-auto">
+        <Card className="card">
           <Card.Body>
-            <Card.Header
-              style={{ padding: "0.5rem", backgroundColor: "transparent" }}
-            >
-              {name}
-            </Card.Header>
-            <Card.Text style={{ margin: "1rem" }}>{description}</Card.Text>
+            <Card.Header className="header">{name}</Card.Header>
+            <Card.Text className="text">{description}</Card.Text>
             {logoUrl && (
               <img src={logoUrl} alt={name} style={{ marginBottom: "2rem" }} />
             )}
@@ -47,7 +38,7 @@ function CompanyCard({ company }) {
               />
             )}
             <div>
-              <Button variant="secondary">Show All Jobs</Button>
+              <Button variant="primary">Show All Jobs</Button>
             </div>
           </Card.Body>
         </Card>

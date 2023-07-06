@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 import Notice from "./Notice";
 import { Card } from "react-bootstrap";
 
@@ -45,7 +45,7 @@ function SignUpForm({ handleSignUp }) {
       await handleSignUp(formData);
     } catch (error) {
       setError(error);
-      return
+      return;
     }
     setFormData({
       username: "",
@@ -59,10 +59,11 @@ function SignUpForm({ handleSignUp }) {
 
   return (
     <div className="background">
-      <Card style={{ width: '400px', padding: '20px',textAlign:"left"  }}>
-      <h2>Sign Up</h2>
+      <Card style={{ width: "400px", padding: "20px", textAlign: "left" }}>
+        <h2>Sign Up</h2>
         <Form className="LogInForm" onSubmit={handleSubmit}>
-          {error && error.map((e, i) => <Notice key={i} message={e} type="danger" />)}
+          {error &&
+            error.map((e, i) => <Notice key={i} message={e} type="danger" />)}
 
           <Form.Group className="mb-3">
             <label htmlFor="username">username</label>
@@ -97,7 +98,7 @@ function SignUpForm({ handleSignUp }) {
               id="firstName"
               name="firstName"
               className="form-control"
-              placeholder="Jon"
+              placeholder="I Am"
               onChange={handleChange}
               value={formData.firstName}
               aria-label="firstName"
@@ -110,7 +111,7 @@ function SignUpForm({ handleSignUp }) {
               id="lastName"
               name="lastName"
               className="form-control"
-              placeholder="Snow"
+              placeholder="Groot"
               onChange={handleChange}
               value={formData.lastName}
               aria-label="lastName"
@@ -123,14 +124,16 @@ function SignUpForm({ handleSignUp }) {
               id="email"
               name="email"
               className="form-control"
-              placeholder="jonsnow123@gmail.com"
+              placeholder="iamgroot@email.com"
               onChange={handleChange}
               value={formData.email}
               aria-label="email"
             />
           </Form.Group>
 
-          <Button variant="primary" type="submit">Sign Up</Button>
+          <Button variant="primary" type="submit">
+            Sign Up
+          </Button>
         </Form>
       </Card>
     </div>
