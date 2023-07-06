@@ -85,9 +85,8 @@ function LogInForm({ handleLogIn }) {
                   {...props}
                   style={{
                     position: "absolute",
-                    backgroundColor: "rgba(255, 100, 100, 0.85)",
                     padding: "2px 10px",
-                    color: "white",
+                    color: "black",
                     borderRadius: 3,
                     ...props.style,
                   }}
@@ -126,11 +125,11 @@ function LogInForm({ handleLogIn }) {
             />
           </Form.Group>
 
-          <Button ref={target} variant="primary" type="submit">
+          <Button ref={target} variant="secondary" type="submit">
             Log In
           </Button>
           <Button className="m-2" variant="success" onClick={logInTestUser}>
-            Log In as Testuser
+            Log In as 'testuser'
           </Button>
         </Form>
       </Card>

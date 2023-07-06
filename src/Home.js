@@ -37,7 +37,7 @@ function Home() {
             </h2>
           ) : (
             <div>
-              <Button variant="primary" onClick={redirectToLogIn}>
+              <Button variant="secondary" onClick={redirectToLogIn}>
                 Log in
               </Button>{" "}
               <Button variant="primary" onClick={redirectToSignUp}>

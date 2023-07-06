@@ -24,11 +24,12 @@ function SearchForm({ handleSearch }) {
     evt.preventDefault();
     handleSearch(searchTerm.trim() || undefined);
     setSearchTerm(searchTerm.trim());
+    setSearchTerm("");
   }
 
   return (
     <Container className="mt-5">
-      <Row style={{ dispaly: "flex", justifyContent: "center" }}>
+      <Row style={{ display: "flex", justifyContent: "center" }}>
         <Col sm={4}>
           <Form className="d-flex" onSubmit={handleSubmit}>
             <Form.Control
@@ -44,6 +45,7 @@ function SearchForm({ handleSearch }) {
               style={{ marginLeft: "3px" }}
               className="rounded"
               variant="primary"
+              type="submit"
             >
               Search
             </Button>
