@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import { Button } from "react-bootstrap";
-import defaultLogo from "../office-building.png";
+import defaultLogo from "./office-building.png";
 import "../Card.css";
 
 /** CompanyCard component.

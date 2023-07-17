@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+<a id="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- TABLE OF CONTENTS -->
+<!-- <details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#component-design">Component Design</a></li>
+        </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#start-the-server">Start the Server</a></li>
+        <li><a href="#start-the-client">Start the Client</a></li>
+      </ul>
+    </li>
+       <li><a href="#todos">To-Dos</a></li>
+    <li><a href="#credits">Credits</a></li>
+  </ol>
+</details>
 
-## Available Scripts
+<!-- ABOUT THE PROJECT -->
 
-In the project directory, you can run:
+## 1. About The Project
 
-### `npm start`
+Jobly is a job-searching platform where a user can browse a list of companies and jobs that belong to each company. A user can search for a specific company or job using a keyword search. A user should sign up to access the company and job list and is able to log in and log out.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[![Product Name Screen Shot][product-screenshot]](https://jobly-mkim.surge.sh/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Built With
 
-### `npm test`
+- JavaScript
+- React
+- React Bootstrap
+- CSS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Component Design
 
-### `npm run build`
+![Component Design Screen Shot][component-design]
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<!-- GETTING STARTED -->
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 2. Getting Started
 
-### `npm run eject`
+### Start the Server
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Clone the backend server repo at [react-jobly-backend](https://github.com/mrnkim/react-jobly-backend)
+2. Clone the repo
+3. Feed data
+   ```sh
+   psql -f jobly.sql jobly
+   ```
+4. Install and start the server
+   ```sh
+   npm install
+   npm start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Start the Client
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Clone the current repo
+2. Install and start the client
+   ```sh
+   npm install
+   npm start
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Learn More
+<!-- ROADMAP -->
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 3. To-Dos
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Add tests
+- Fix error messages in signup form
+- Style loading spinner in login form
+- Add back button in company list and job list
 
-### Code Splitting
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<!-- CREDITS -->
 
-### Analyzing the Bundle Size
+## 4. Credits
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This app uses a backend server built by Rithm School. The goal of this project was to focus on the frontend portion of the app. However, I did build my version of the backend server [here](https://github.com/mrnkim/express-jobly) using Node and Express.
 
-### Making a Progressive Web App
+The initial construction of the frontend (the current repository) was a collaborative effort with @stzheng716, undertaken during a 3-day sprint at Rithm School. Following my graduation, I refactored the code to enhance its functionality and styling.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[product-screenshot]: public/Screenshot.png
+[component-design]: public/component-design.png

@@ -19,6 +19,7 @@ import userContext from "./userContext";
 function RoutesList({ handleLogIn, handleSignUp, handleUpdate, error }) {
   const user = useContext(userContext);
 
+  // Routes for logged in users
   if (user.user) {
     return (
       <Routes>
@@ -33,11 +34,12 @@ function RoutesList({ handleLogIn, handleSignUp, handleUpdate, error }) {
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     );
-  } else {
+  }
+  // Routes for users who haven't logged in
+  else {
     return (
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route
           path="/login"
           element={<LogInForm handleLogIn={handleLogIn} error={error} />}
