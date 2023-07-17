@@ -50,9 +50,9 @@ Jobly is a job-searching platform where a user can browse a list of companies an
 
 ### Start the Server
 
-1. Clone the backend server repo at [react-jobly-backend](https://github.com/mrnkim/react-jobly-backend)
+1. Go to the backend server repo at [react-jobly-backend](https://github.com/mrnkim/react-jobly-backend)
 2. Clone the repo
-3. Feed data
+3. Create and connect database
    ```sh
    psql -f jobly.sql jobly
    ```
