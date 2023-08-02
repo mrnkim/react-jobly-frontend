@@ -27,7 +27,7 @@
 
 ## 1. About The Project
 
-Jobly is a job-searching platform where a user can browse a list of companies and jobs that belong to each company. A user can search for a specific company or job using a keyword search. A user should sign up to access the company and job list and is able to log in and log out.
+[Jobly](https://jobly-mkim.surge.sh/) is a job-searching platform where a user can browse a list of companies and jobs that belong to each company. A user can search for a specific company or job using a keyword search. A user should sign up to access the company and job list and is able to log in and log out.
 
 [![Product Name Screen Shot][product-screenshot]](https://jobly-mkim.surge.sh/)
 
